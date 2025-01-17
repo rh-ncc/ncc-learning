@@ -64,7 +64,6 @@
 
 # Ignore ddev configuration folders
 .ddev/.global_commands/
-.ddev/commands/
 .ddev/homeadditions/
 .ddev/providers/
 .ddev/xhprof/

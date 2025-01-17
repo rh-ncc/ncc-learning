@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#ddev-generated
+## Description: Run PHPUnit CLI inside the web container
+## Usage: phpunit [flags] [args]
+## ProjectTypes: drupal,drupal11,drupal10,drupal9,drupal8,drupal7,backdrop
+## ExecRaw: true
+
+# Ignore anything we find in the mounted global commands
+PATH=${PATH//\/mnt\/ddev-global-cache\/global-commands\/web/}
+
+if ! command -v bin/phpunit >/dev/null; then
+  echo "phpunit is not available. You may need to 'ddev composer install"
+  exit 1
+fi
+bin/phpunit "$@" --testdox --colors

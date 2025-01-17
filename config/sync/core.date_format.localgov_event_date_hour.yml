@@ -1,0 +1,10 @@
+uuid: a81040d7-014c-4855-8973-8c3e2b1a18f3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-yQtRZTqIfDGbZJ-IXU0YH4KDMP6B_z6woonSaWe7VA'
+id: localgov_event_date_hour
+label: 'Event date hour'
+locked: false
+pattern: g.ia

@@ -1,0 +1,23 @@
+uuid: 18b9b3e3-49ea-4f8f-bfce-d971c75c9e6e
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+_core:
+  default_config_hash: 6T9TWEFpCIs6Bnjz_cAEkC2klbd2kRN8L7fDw9LqGpk
+id: node.localgov_subsites_banner
+field_name: localgov_subsites_banner
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

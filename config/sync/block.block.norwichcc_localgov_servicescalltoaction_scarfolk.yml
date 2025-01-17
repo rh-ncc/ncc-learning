@@ -1,0 +1,22 @@
+uuid: e80c71bf-9df6-44d3-a495-00e3229aa38d
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_services
+  theme:
+    - norwichcc
+_core:
+  default_config_hash: cGQX48mjw70XY9gxwrTgcrYtPnq2iAIPiqUVk5t5Otg
+id: norwichcc_localgov_servicescalltoaction_scarfolk
+theme: norwichcc
+region: content_top
+weight: 1
+provider: null
+plugin: localgov_service_cta_block
+settings:
+  id: localgov_service_cta_block
+  label: 'Services call to action'
+  label_display: '0'
+  provider: localgov_services
+visibility: {  }

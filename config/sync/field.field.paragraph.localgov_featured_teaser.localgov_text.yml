@@ -1,0 +1,24 @@
+uuid: 5bb13f2c-f59e-4c09-a862-b7c6bc9b04af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.localgov_text
+    - paragraphs.paragraphs_type.localgov_featured_teaser
+  module:
+    - text
+_core:
+  default_config_hash: i-SXyoAxWNwUx9hn2wYA0Oyh2lRRotqDi4qFKfoopzQ
+id: paragraph.localgov_featured_teaser.localgov_text
+field_name: localgov_text
+entity_type: paragraph
+bundle: localgov_featured_teaser
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

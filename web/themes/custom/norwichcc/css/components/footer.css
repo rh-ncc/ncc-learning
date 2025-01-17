@@ -1,0 +1,15 @@
+.block-ncc-blocks-logo img {
+  width: 50%;
+}
+
+footer:before {
+  content: "";
+  display: block;
+  height: 10rem;
+  width: 100vw;
+  background: url(/themes/custom/norwichcc/assets/images/norwich_skyline.png);
+  position: relative;
+  background-position: center 3px;
+  background-repeat: repeat-x;
+  background-size: contain;
+}

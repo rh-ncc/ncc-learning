@@ -1,0 +1,14 @@
+uuid: b741900e-ce72-4020-90fa-7b080fd94fa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.localgov_admin
+  module:
+    - user
+id: user_remove_role_action.localgov_admin
+label: 'Remove the LocalGov Admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: localgov_admin

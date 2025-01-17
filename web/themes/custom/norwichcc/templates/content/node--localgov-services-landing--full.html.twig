@@ -1,0 +1,89 @@
+{#
+/**
+ * @file
+ * Default node template for localgov_services_landing pages.
+ */
+#}
+
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/service-landing-page') }}
+{% endif %}
+
+{#
+  Set icon names here, so we can override them in subthemes by calling
+  'include @localgov_base/content/-node--localgov-services-landing--full.twig with {
+    facebook_icon = 'facebook-f',
+    twitter_icon = 'twitter',
+  }
+#}
+{% set facebook_icon = 'facebook-square' %}
+{% set twitter_icon = 'twitter-square' %}
+{% set email_icon = 'envelope-square' %}
+{% set phone_icon = 'phone-square' %}
+{% set website_icon = 'globe' %}
+{% set map_icon = 'map-marker-alt' %}
+
+{%
+  set classes = [
+    'service-landing-page',
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
+  <div class="lgd-container padding-horizontal">
+    <div class="lgd-row">
+
+      {# Begin Main Content #}
+      <div class="lgd-row__full">
+        {# Begin Services List #}
+        {% if node.localgov_destinations.value %}
+          <h2 class="visually-hidden">{{ 'Services List'|t }}</h2>
+          <section class="service-landing-page__services lgd-teaser-list">
+            {{ content.localgov_destinations }}
+          </section>
+        {% endif %}
+        {# End Services List #}
+
+        {# Begin Service Updates #}
+        {% if service_updates %}
+          <section class="service-landing-page__updates">
+            {{ service_updates }}
+          </section>
+        {% endif %}
+        {# End Service Updates #}
+      </div>
+
+      {# Begin Grid Main Column #}
+      <div class="lgd-row__two-thirds">
+
+      {{ content.field_contact }}
+
+      </div>
+      {# End Grid Main Column #}
+
+      {# Begin Sidebar #}
+      {% if node.localgov_popular_topics.value %}
+        <aside class="lgd-row--one-third service-landing-page__sidebar">
+          {{ content.localgov_popular_topics }}
+        </aside>
+      {% endif %}
+      {# End Sidebar #}
+
+    </div>
+  </div>
+</article>
+
+{% block content_variable %}
+  {#
+    This allows the cache_context to bubble up for us, without having to
+    individually list every field in
+    {{ content|without('localgov_name', 'localgov_other_field', 'localgov_etc') }}
+  #}
+  {% set catch_cache = content|render %}
+{% endblock %}

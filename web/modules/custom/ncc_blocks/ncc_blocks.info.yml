@@ -1,0 +1,5 @@
+name: 'Norwich Custom Blocks'
+type: module
+description: 'Custom blocks for Norwich LGD installation'
+package: Norwich
+core_version_requirement: ^10 || ^11

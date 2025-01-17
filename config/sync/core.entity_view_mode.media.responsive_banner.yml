@@ -1,0 +1,13 @@
+uuid: 1153188b-ba8a-47b2-a935-e837b564d7d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: HRT9XglZtpTEYkXLdQfMqU4QnpDus9pgWSKDbYow1qE
+id: media.responsive_banner
+label: 'Responsive banner'
+description: ''
+targetEntityType: media
+cache: true

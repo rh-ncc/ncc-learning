@@ -1,0 +1,20 @@
+uuid: 9e5c7446-641b-4f5a-b115-a07b587960db
+langcode: en
+status: true
+dependencies:
+  module:
+    - ncc_blocks
+  theme:
+    - norwichcc
+id: norwichcc_social
+theme: norwichcc
+region: footer_second
+weight: -18
+provider: null
+plugin: ncc_blocks_social
+settings:
+  id: ncc_blocks_social
+  label: 'Follow us'
+  label_display: visible
+  provider: ncc_blocks
+visibility: {  }

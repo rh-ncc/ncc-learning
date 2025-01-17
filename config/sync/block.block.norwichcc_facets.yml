@@ -1,0 +1,32 @@
+uuid: 78a0189f-c5ac-483b-9840-ad72f6bf1717
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.localgov_directories_facets
+  module:
+    - facets
+    - node
+  theme:
+    - norwichcc
+id: norwichcc_facets
+theme: norwichcc
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:localgov_directories_facets'
+settings:
+  id: 'facet_block:localgov_directories_facets'
+  label: Facets
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: norwichcc_facets
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      localgov_directory: localgov_directory

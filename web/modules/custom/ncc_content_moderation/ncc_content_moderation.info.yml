@@ -1,0 +1,5 @@
+name: 'NCC content moderation'
+type: module
+description: 'Custom content moderation features and customisations.'
+package: NCC
+core_version_requirement: ^10 || ^11

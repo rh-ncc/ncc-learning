@@ -1,0 +1,16 @@
+uuid: db64ffd1-899a-4daa-b6e0-70569a85e7ef
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - localgov_news
+_core:
+  default_config_hash: kWcpcLIZMLaH49m3WCxb8pRwHg-vR7oThJDl-i7Gb8A
+name: 'News article'
+type: localgov_news_article
+description: 'A stand-alone news article that may also appear in a news listing page.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,22 @@
+uuid: f3df5525-af30-421c-bb78-f01cffe114e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_core
+  theme:
+    - norwichcc
+_core:
+  default_config_hash: _rLbHDXkhDWmFVzav5liiDU56NLoRKtMPaN4iMX-p-M
+id: norwichcc_localgov_poweredbylocalgovdrupal_scarfolk
+theme: norwichcc
+region: footer
+weight: -16
+provider: null
+plugin: localgov_powered_by_block
+settings:
+  id: localgov_powered_by_block
+  label: 'Powered by LocalGovDrupal'
+  label_display: '0'
+  provider: localgov_core
+visibility: {  }

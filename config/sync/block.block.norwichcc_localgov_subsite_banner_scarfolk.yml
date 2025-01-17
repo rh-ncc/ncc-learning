@@ -1,0 +1,24 @@
+uuid: 851ab472-4041-489f-982f-9b7ff9cbd5de
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_subsites
+  theme:
+    - norwichcc
+_core:
+  default_config_hash: Jr3czF44B5B-KsLZ4z7mqCtfroGwlbRRLZglQV6Xd0c
+id: norwichcc_localgov_subsite_banner_scarfolk
+theme: norwichcc
+region: banner
+weight: 0
+provider: null
+plugin: localgov_subsite_banner
+settings:
+  id: localgov_subsite_banner
+  label: 'Subsite banner'
+  label_display: '0'
+  provider: localgov_subsites
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility: {  }

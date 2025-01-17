@@ -1,0 +1,20 @@
+uuid: c3d8843a-975b-4dc6-9d48-3184a6cb9184
+langcode: en
+status: true
+dependencies:
+  module:
+    - ncc_blocks
+  theme:
+    - norwichcc
+id: norwichcc_logo
+theme: norwichcc
+region: footer_third
+weight: -17
+provider: null
+plugin: ncc_blocks_logo
+settings:
+  id: ncc_blocks_logo
+  label: logo
+  label_display: '0'
+  provider: ncc_blocks
+visibility: {  }

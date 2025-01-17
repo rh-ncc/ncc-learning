@@ -1,0 +1,14 @@
+uuid: 08c11732-6239-48d5-a23d-2e23f38f3288
+langcode: en
+status: 1
+dependencies: {  }
+_core:
+  default_config_hash: VdODXUFAMPMJlo-h17YecFvT5gKNJ_LkBobVlC-zSr4
+id: galaxy_tab_s4
+label: 'Galaxy Tab S4'
+weight: -6
+orientation: portrait
+dimensions:
+  width: 1600
+  height: 2560
+  dppx: 2.0

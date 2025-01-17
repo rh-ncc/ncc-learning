@@ -1,0 +1,9 @@
+.page__content,
+.node__content  {
+    max-width: var(--page-title-width);
+}
+
+
+table caption { 
+    margin-bottom: 12px;
+}

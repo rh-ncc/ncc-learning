@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for CPAG Blocks.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+/**
+ * Theme variables for the blocks.
+ */
+function ncc_blocks_theme($existing, $type, $theme, $path) {
+  return [
+    'ncc_social' => [
+      'variables' => [],
+    ],
+    'ncc_copyright' => [
+      'variables' => [],
+    ],
+    'ncc_logo' => [
+      'variables' => [],
+    ],
+  ];
+}

@@ -1,0 +1,14 @@
+uuid: a9d8fb25-953e-43e4-b943-92f18e6ecaf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.emergency_publisher
+  module:
+    - user
+id: user_add_role_action.emergency_publisher
+label: 'Add the Emergency publisher role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: emergency_publisher

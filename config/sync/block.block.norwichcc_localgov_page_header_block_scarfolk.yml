@@ -1,0 +1,22 @@
+uuid: 93ea6982-2f15-4203-85d3-b2a487e18e5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_core
+  theme:
+    - norwichcc
+_core:
+  default_config_hash: f0iKCYeeRkvUMJ87FM2sOkHWRyk74xQsanz5TniJSG8
+id: norwichcc_localgov_page_header_block_scarfolk
+theme: norwichcc
+region: content_top
+weight: -10
+provider: null
+plugin: localgov_page_header_block
+settings:
+  id: localgov_page_header_block
+  label: 'Page header block'
+  label_display: '0'
+  provider: localgov_core
+visibility: {  }

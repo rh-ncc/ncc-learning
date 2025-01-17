@@ -1,0 +1,117 @@
+name: norwichcc
+recipe: drupal10
+config:
+  webroot: web
+  php: '8.3'
+  database: mariadb:10.11
+proxy:
+  mailhog:
+    - mail.norwichcc.lndo.site
+  adminer:
+    - adminer.norwichcc.lndo.site
+  solr-sitewide:
+    - 'solr-sitewide.norwichcc.lndo.site:8983'
+services:
+  appserver:
+    scanner:
+      retry: 5
+    xdebug: true
+    build_as_root:
+      # This disables Xdebug during build, but puts all dependencies in place
+      # ready for the tooling to enable Xdebug.
+      - rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload
+    overrides:
+      environment:
+        DRUSH_OPTIONS_ROOT: '/app/web'
+        DRUSH_OPTIONS_URI: 'https://norwichcc.lndo.site'
+        SIMPLETEST_BASE_URL: 'http://norwichcc.lndo.site'
+        SIMPLETEST_DB: 'mysql://database:database@database/database'
+        MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName": "chrome", "goog:chromeOptions": {"args": ["--disable-gpu","--headless", "--no-sandbox", "--disable-dev-shm-usage"]}}, "http://chromedriver:9515"]'
+        BROWSERTEST_OUTPUT_DIRECTORY: '/app/web/sites/simpletest/browser_output'
+        BROWSERTEST_OUTPUT_BASE_URL: 'http://norwichcc.lndo.site'
+        # Support debugging CLI with Xdebug.
+        PHP_IDE_CONFIG: "serverName=appserver"
+        XDEBUG_SESSION: "lando"
+    build:
+      - mkdir -p web/sites/simpletest/browser_output
+  database:
+    creds:
+      user: database
+      password: database
+      database: database
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+    portforward: true
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: '/bin/s6-svscan /etc/services.d'
+    portforward: true
+  node:
+    type: 'node:18'
+    globals:
+      gulp-cli: latest
+    overrides:
+      ports:
+      - '3050:3050'
+  chromedriver:
+    type: compose
+    scanner: false
+    services:
+      image: drupalci/webdriver-chromedriver:production
+      ports:
+        - "9515:9515"
+      security_opt:
+        - seccomp:unconfined
+      command: chromedriver --verbose --allowed-ips= --allowed-origins=*
+  solr-sitewide:
+    type: solr:8
+    core: sitewide
+    config:
+      dir: .lando/solr/norwichcc_sitewide_solr
+tooling:
+  composer:
+    service: appserver
+    cmd: /usr/local/bin/composer
+  sca:
+    service: appserver
+    cmd: 'bash -c "/app/vendor/bin/phpstan analyse -c /app/phpstan.neon /app/web/profiles/contrib/norwichcc* /app/web/modules/contrib/norwichcc*  /app/web/themes/contrib/norwichcc*"'
+  drush:
+    service: appserver
+    cmd: '/app/bin/drush'
+  phpcs:
+    service: appserver
+    cmd: '/app/bin/phpcs -p'
+  phix:
+    service: appserver
+    cmd: '/app/bin/phpcbf'
+  phpstan:
+    service: appserver
+    cmd: '/app/bin/phpstan'
+  phpunit:
+    service: appserver
+    cmd: '/app/bin/phpunit --testdox'
+  xdebug-on:
+    service: appserver
+    description: Enable Xdebug for Apache.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && docker-php-ext-enable xdebug && /etc/init.d/apache2 reload && echo "Xdebug enabled"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable Xdebug for Apache.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload && echo "Xdebug disabled"
+    user: root
+  gulp:
+    service: node
+  node:
+    service: node
+  npm:
+    service: node
+  yarn:
+    service: node
+  update-solr-config:
+    service: appserver
+    cmd: /app/.lando/update-solr-config.sh

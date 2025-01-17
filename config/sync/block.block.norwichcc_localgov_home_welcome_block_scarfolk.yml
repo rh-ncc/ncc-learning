@@ -1,0 +1,28 @@
+uuid: d2e84488-93b6-47d6-a42e-5e8c596a9050
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov
+    - system
+  theme:
+    - norwichcc
+_core:
+  default_config_hash: G3wwIAYo1fyw5qaQywazqr-r0a6zdt08kvzHhgCYTVs
+id: norwichcc_localgov_home_welcome_block_scarfolk
+theme: norwichcc
+region: content_top
+weight: 0
+provider: null
+plugin: localgov_home_welcome_block
+settings:
+  id: localgov_home_welcome_block
+  label: 'Home welcome block'
+  label_display: '0'
+  provider: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

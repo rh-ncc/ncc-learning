@@ -1,0 +1,22 @@
+uuid: bb258a19-be72-428a-9786-08ac8f91d4ec
+langcode: en
+status: true
+dependencies:
+  theme:
+    - norwichcc
+_core:
+  default_config_hash: 18k4pNekX8og7ZyuFH_4h0qPH5lm4OKpF5OXvHB2JGc
+id: norwichcc_localgov_tabs_scarfolk
+theme: norwichcc
+region: tabs
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,37 @@
+global:
+  css:
+    base:
+      # This is called in your norwichcc.info.yml file via `libraries-extend`.
+      # This ensures that in the cascade, your variables come after the base theme's
+      # variables.
+      css/base/variables.css: {}
+      css/base/base.css: {}
+      css/components/footer.css: {}
+
+# To override CSS from the base theme, add your library here, and then use
+# `libraries-extend` to add that code to the library from the base theme. See the
+# norwichcc.info.yml file for an example, using this `sample-library`.
+
+service-cta-block:
+  css:
+    theme:
+      css/components/service-cta-block.css: {}
+
+wysiwyg-styles:
+  css:
+    theme:
+      css/components/wysiwyg-styles.css: {}
+
+guide-nav:
+  css:
+    theme:
+      css/components/guide-nav.css: {}
+
+# If your CSS is for a new component, and is not going to override existing CSS, you
+# can add that to your component in the usual ways - via `{{ attach_library }}` or a
+# preprocess hook, or similar approach.
+
+# sample-library-2
+#   css:
+#     theme:
+#       css/sample.css: {}

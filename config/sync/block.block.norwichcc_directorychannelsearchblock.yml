@@ -1,0 +1,22 @@
+uuid: 80d82351-2ae0-4fae-b93c-307b3526ece0
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_directories
+  theme:
+    - norwichcc
+id: norwichcc_directorychannelsearchblock
+theme: norwichcc
+region: sidebar_first
+weight: 0
+provider: null
+plugin: localgov_directories_channel_search_block
+settings:
+  id: localgov_directories_channel_search_block
+  label: 'Directory channel search block'
+  label_display: '0'
+  provider: localgov_directories
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility: {  }

@@ -1,0 +1,13 @@
+uuid: b63607f3-278f-4201-b402-ff9ba5e60833
+langcode: en
+status: true
+dependencies:
+  module:
+    - localgov_workflows_notifications
+_core:
+  default_config_hash: zUTTB_fkqdBPgGuKjSpbWuwFegnUQXfEDVzb8hiRXAo
+id: localgov_service_contact_delete_action
+label: 'Delete service contacts'
+type: localgov_service_contact
+plugin: 'entity:delete_action:localgov_service_contact'
+configuration: {  }

@@ -11,7 +11,7 @@
 * `ddev start`
 * `ddev composer install`
 * `ddev import-db --file=norwich.sql.gz`
-* `ddev drush login`
+* `ddev drush uli --uri=$(gp url 8080)`
 
 ## Check for updates
 

@@ -1,4 +1,33 @@
 # Norwich City Council: IT training
 
+## Preparation
+
+1. Log into Github and Gitpod
 1. Fork this repository
-2. [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/new)
+1. [Create new Gitpod project](https://gitpod.io/new)
+
+## Set up
+
+* `ddev start`
+* `ddev composer install`
+* `ddev import-db --file=norwich.sql.gz`
+* `ddev drush login`
+
+## Check for updates
+
+* `composer audit`
+
+## Applying updates
+
+* `ddev composer update drupal/* core-recommended  --with-dependencies`
+* `ddev drush updb`
+* `ddev composer update drupal/office_hours`
+
+## Testing updates
+
+* `ddev phpunit`
+
+## Version conrol
+
+* `git diff`
+* `git add -p`

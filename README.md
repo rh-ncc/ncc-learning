@@ -15,7 +15,7 @@
 
 ## Check for updates
 
-* `composer audit`
+* `ddev composer audit`
 
 ## Applying updates
 

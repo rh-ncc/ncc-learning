@@ -17,6 +17,7 @@
         "drupal/core-recommended": "^10.3",
         "drupal/devel": "^5.3",
         "drupal/editoria11y": "^2.2",
+        "drupal/entity_usage": "^2.0@beta",
         "localgovdrupal/localgov": "^3.0",
         "localgovdrupal/localgov_sa11y": "^1.0@beta",
         "localgovdrupal/localgov_search_solr": "^1.1",
